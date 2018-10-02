@@ -34,11 +34,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="products.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../python_OOP/products.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state relative-caret-position="295">
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Animal.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../python_OOP/Animal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Math_Dojo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../python_OOP/Math_Dojo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SList.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../python_OOP/SList.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="97" column="19" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -65,6 +92,9 @@
         <option value="$PROJECT_DIR$/../python_OOP/bike.py" />
         <option value="$PROJECT_DIR$/../python_OOP/car.py" />
         <option value="$PROJECT_DIR$/../python_OOP/products.py" />
+        <option value="$PROJECT_DIR$/../python_OOP/Animal.py" />
+        <option value="$PROJECT_DIR$/../python_OOP/Math_Dojo.py" />
+        <option value="$PROJECT_DIR$/../python_OOP/SList.py" />
       </list>
     </option>
   </component>
@@ -104,7 +134,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python_OOP/products.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python_OOP/SList.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -123,7 +153,61 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.products">
+  <component name="RunManager" selected="Python.SList">
+    <configuration name="Animal" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python_fundamentals" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\abars\Documents\Sublime programs\School Projects\python_stack\python_fundamentals\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Projects" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../python_OOP/Animal.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Math_Dojo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python_fundamentals" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\abars\Documents\Sublime programs\School Projects\python_stack\python_fundamentals\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Projects" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../python_OOP/Math_Dojo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="SList" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python_fundamentals" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\abars\Documents\Sublime programs\School Projects\python_stack\python_fundamentals\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Projects" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../python_OOP/SList.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="python_fundamentals" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,24 +223,6 @@
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="bike" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="python_fundamentals" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\abars\Documents\Sublime programs\School Projects\python_stack\python_fundamentals\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Projects" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../python_OOP/bike.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
@@ -216,15 +282,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.functions_intermediate_2.py" />
-      <item itemvalue="Python.bike" />
       <item itemvalue="Python.car" />
       <item itemvalue="Python.products" />
+      <item itemvalue="Python.Animal" />
+      <item itemvalue="Python.Math_Dojo" />
+      <item itemvalue="Python.SList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.SList" />
+        <item itemvalue="Python.Math_Dojo" />
+        <item itemvalue="Python.Animal" />
         <item itemvalue="Python.products" />
         <item itemvalue="Python.car" />
-        <item itemvalue="Python.bike" />
       </list>
     </recent_temporary>
   </component>
@@ -247,8 +317,8 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23051299" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32880846" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.093937375" side_tool="true" visible="true" weight="0.32880846" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.9060626" visible="true" weight="0.32880846" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -334,8 +404,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../python_OOP/products.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="295">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python_OOP/Animal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python_OOP/Math_Dojo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python_OOP/SList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="97" column="19" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
         </state>
       </provider>
     </entry>
