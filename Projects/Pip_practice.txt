@@ -1,0 +1,12 @@
+running pip3 list was no different than running pip list with my virtual environmentactivated...
+
+When I tried to install Django again, I was informed by my console that the requirement was already satisfied. :)
+
+pip freeze displays the currently installed packages
+
+an article on Medium.com states that running freeze > requirements.txt can be dangerous because it pollutes the dependancy list
+
+
+what happens when I run ls inside of my desktop?
+
+Django and Flask have a lot of files.
