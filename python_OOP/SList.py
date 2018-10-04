@@ -21,11 +21,10 @@ class Slist:
     def removeNode(self, val):
         runner = self.head
         if (runner.value == val):
-            temp = self.head
-            self.head = self.head.next
-            del temp
+            self.head = runner.next
+            del runner
             return self
-        while(runner.next != None):
+        while(runner.next):
             if (runner.next.value == val):
                 temp = runner.next
                 runner.next = runner.next.next
@@ -34,38 +33,32 @@ class Slist:
             runner = runner.next
         else:
             temp = runner.next
-            if (runner.next.next != None):
+            if (runner.next.next):
                 runner = runner.next.next
             del temp
+            return self
 
     def insertNode(self, val, pos):
         if (pos < 0):
             print("Error: position too low. out of range")
             return self
+        count = 0
         node = Node(val)
         runner = self.head
-        if (pos == 0):
+        if count == pos:
             node.next = self.head
             self.head = node
             return self
-        if (pos == 1):
-            if (runner.next != None):
-                node.next = runner.next
-                runner.next = node
-                return self
-            else:
-                addNode(val)
-                return self
-        i = 2
-        runner = runner.next
-        while(runner.next != None):
-            if (i == pos):
+        while(runner.next):
+            count += 1
+            if count == pos:
                 node.next = runner.next
                 runner.next = node
                 return self
             runner = runner.next
-            i += 1
-        if (i == pos):
+        count += 1
+        if count == pos:
+            node.next = runner.next
             runner.next = node
             return self
         print("Error, position too high. out of range")
@@ -94,6 +87,6 @@ list.removeNode(5)
 list.removeNode(7)
 list.printAllValues()
 list.insertNode(1,0)
-list.insertNode(1,2)
-list.insertNode(1,4)
+list.insertNode(8,2)
+list.insertNode(9,3)
 list.printAllValues()

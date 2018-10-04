@@ -1,0 +1,18 @@
+	1.) How would you know if you have a circular linked list?
+if self.head.last is self.foot AND self.foot.next is self.head
+
+
+	2.) How would you get to the middle of the linked list?
+run through the list with both a forward runner, and backward runner. 
+define the middle of the list for odd, or even numbered list values
+
+
+	3.) How would you remove duplicate values in the list?
+memoize the whole list, and remove duplicate values based on the table OR
+if memory is an issue, run an efficient program which searches the list 
+multiple times to remove duplicate values.
+
+
+	4.)How would you reverse the values in the list?
+run through the list with a forward runner and a backward runner. swap values of next and last.
+track events such as runner location, and runner colision
