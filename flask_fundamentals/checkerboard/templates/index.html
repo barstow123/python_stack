@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>checker board</title>
+	<style type='text/css'>
+
+	#wrapper {
+		width: 1024px;
+		height: 1200px;
+	}
+
+	.box1 {
+		height: 80px;
+		width: 80px;
+		background-color: black;
+		display: inline-block;
+	}
+
+	.box2 {
+		height: 80px;
+		width: 80px;
+		background-color: red;
+		display: inline-block;
+	}
+	.row {
+		width: 1024px;
+	}
+
+
+
+
+	</style>
+</head>
+<body>
+	<div id='wrapper'>
+
+		{% for y in range(leny): %}	
+			<div class='row'>
+			{% for x in range(lenx) %}
+				{% if world[y][x] == 1 %}
+					<div class='box1'></div>
+				{% endif %}
+				{% if world[y][x] == 0 %}
+					<div class='box2'></div>
+				{% endif %}
+			{% endfor %}
+			</div>
+		{% endfor %}
+				
+
+	</div>
+</body>
+</html>

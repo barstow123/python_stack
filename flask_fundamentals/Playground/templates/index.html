@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>playground</title>
+	<style>
+		.box {
+   			 background-color: LightBlue;
+   			 height: 200px;
+   			 width: 200px;
+   			 margin-left: 10px;
+   			 display: inline-block;
+		}
+
+		#wrapper .box:nth-child(2) {
+			margin-left: 0px;
+		}
+
+		#header {
+			width: auto;
+			text-align: center;
+			height: 150px;
+		}
+
+		#wrapper {
+			text-align: center;
+			width: auto;
+			height: auto;
+		}
+		h1 {
+    		color: maroon;
+   			 margin-left: 40px;
+		} 
+	</style>
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='header'>
+			<h1>Welcome</h1>
+		</div>
+
+		<div class='box'></div>
+		<div class='box'></div>
+		<div class='box'></div>
+
+	</div>
+</body>
+</html>

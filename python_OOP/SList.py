@@ -1,80 +1,80 @@
 class Node:
 
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+	def __init__(self, value):
+		self.value = value
+		self.next = None
 
 class Slist:
 
-    def __init__(self, value):
-        node = Node(value)
-        self.head = node
+	def __init__(self, value):
+		node = Node(value)
+		self.head = node
 
-    def addNode(self, value):
-        node = Node(value)
-        runner = self.head
-        while(runner.next != None):
-            runner = runner.next
-        runner.next = node
-        return self
+	def addNode(self, value):
+		node = Node(value)
+		runner = self.head
+		while(runner.next != None):
+			runner = runner.next
+		runner.next = node
+		return self
 
-    def removeNode(self, val):
-        runner = self.head
-        if (runner.value == val):
-            self.head = runner.next
-            del runner
-            return self
-        while(runner.next):
-            if (runner.next.value == val):
-                temp = runner.next
-                runner.next = runner.next.next
-                del temp
-                return self
-            runner = runner.next
-        else:
-            temp = runner.next
-            if (runner.next.next):
-                runner = runner.next.next
-            del temp
-            return self
+	def removeNode(self, val):
+		runner = self.head
+		if (runner.value == val):
+			self.head = runner.next
+			del runner
+			return self
+		while(runner.next):
+			if (runner.next.value == val):
+				temp = runner.next
+				runner.next = runner.next.next
+				del temp
+				return self
+			runner = runner.next
+		else:
+			temp = runner.next
+			if (runner.next.next):
+				runner = runner.next.next
+			del temp
+			return self
 
-    def insertNode(self, val, pos):
-        if (pos < 0):
-            print("Error: position too low. out of range")
-            return self
-        count = 0
-        node = Node(val)
-        runner = self.head
-        if count == pos:
-            node.next = self.head
-            self.head = node
-            return self
-        while(runner.next):
-            count += 1
-            if count == pos:
-                node.next = runner.next
-                runner.next = node
-                return self
-            runner = runner.next
-        count += 1
-        if count == pos:
-            node.next = runner.next
-            runner.next = node
-            return self
-        print("Error, position too high. out of range")
-        return self
-
-
+	def insertNode(self, val, pos):
+		if (pos < 0):
+			print("Error: position too low. out of range")
+			return self
+		count = 0
+		node = Node(val)
+		runner = self.head
+		if count == pos:
+			node.next = self.head
+			self.head = node
+			return self
+		while(runner.next):
+			count += 1
+			if count == pos:
+				node.next = runner.next
+				runner.next = node
+				return self
+			runner = runner.next
+		count += 1
+		if count == pos:
+			node.next = runner.next
+			runner.next = node
+			return self
+		print("Error, position too high. out of range")
+		return self
 
 
 
-    def printAllValues(self):
-        runner = self.head
-        print(f'\n\nid points to {self.head}')
-        while(runner.next != None):
-            print(id(runner), runner.value, id(runner.next))
-            runner = runner.next
-        print(id(runner), runner.value, id(runner.next))
+
+
+	def printAllValues(self):
+		runner = self.head
+		print(f'\n\nid points to {self.head}')
+		while(runner.next != None):
+			print(id(runner), runner.value, id(runner.next))
+			runner = runner.next
+		print(id(runner), runner.value, id(runner.next))
 
 list = Slist(3)
 list.addNode(4)
@@ -90,3 +90,25 @@ list.insertNode(1,0)
 list.insertNode(8,2)
 list.insertNode(9,3)
 list.printAllValues()
+
+thing = []
+thing.append([])
+print(thing)
+
+
+
+world = []
+colMod = 0
+for row in range(5):
+	for col in range(int(5)):
+		insertRow = []
+		if (len(insertRow) < 5):
+			insertRow.append((0+colMod)%2)
+		if (len(insertRow) < 5):
+			insertRow.append((1+colMod)%2)
+	world.append(insertRow)
+	colMod += 1
+
+leny = len(world)
+lenx = len(world[0])
+print(world)

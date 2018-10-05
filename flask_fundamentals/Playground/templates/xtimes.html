@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>playground</title>
+	<style>
+		.box {
+   			 background-color: LightBlue;
+   			 height: 200px;
+   			 width: 200px;
+   			 margin-left: 10px;
+   			 display: inline-block;
+		}
+
+		#header {
+			width: auto;
+			text-align: center;
+			height: 150px;
+		}
+
+		#wrapper {
+			text-align: center;
+			width: auto;
+			height: auto;
+		}
+		h1 {
+    		color: maroon;
+   			 margin-left: 40px;
+		} 
+	</style>
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='header'>
+			<h1>Welcome</h1>
+		</div>
+
+		{% for x in range(times): %}
+		<div class='box'></div>
+		{% endfor %}
+
+	</div>
+</body>
+</html>
