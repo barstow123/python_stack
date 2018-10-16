@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	{% load static %}
+	<link rel='stylesheet' href='{% static "ninja_gold/css/styles.css" %}'>
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='header'>
+			<h3><strong>Your Gold:</strong> {{request.session.gold}}</h3>
+		</div>
+
+		<div id='main-content'>
+			<div class='box'>
+				<h2>Farm</h2>
+				<p>(earns 10-20 gold)</p>
+				<form action='proccess_gold/' method='post'>
+					{% csrf_token %}
+					<input type='hidden' name='action' value='farm'>
+					<input type='submit' value='Find gold'>
+				</form>
+			</div>
+			<div class='box'>
+				<h2>Cave</h2>
+				<p>(earns 15 gold)</p>
+				<form action='proccess_gold/' method='post'>
+					{% csrf_token %}
+					<input type='hidden' name='action' value='cave'>
+					<input type='submit' value='Find gold'>
+				</form>
+			</div>
+			<div class='box'>
+				<h2>House</h2>
+				<p>(earns 2-5 gold)</p>
+				<form action='proccess_gold/' method='post'>
+					{% csrf_token %}
+					<input type='hidden' name='action' value='house'>
+					<input type='submit' value='Find gold'>
+				</form>
+			</div>
+			<div class='box'>
+				<h2>Casino</h2>
+				<p>(earns/takes 0-50 gold)</p>
+				<form action='proccess_gold/' method='post'>
+					{% csrf_token %}
+					<input type='hidden' name='action' value='casino'>
+					<input type='submit' value='Find gold'>
+				</form>
+			</div>
+		</div>
+
+		<div id='footer'>
+			<p>activities</p>
+			<div class='activities'>
+				{% for activity in request.session.activities %}
+					{% if activity.status == 0 %}
+						<div class='activity g'>{{activity.message}}</div>
+					{% endif %}
+					{% if activity.status == 1 %}
+						<div class='activity r'>{{activity.message}}</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

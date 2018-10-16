@@ -1,0 +1,44 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+#wrapper {
+	width: 1024px;
+	height: 1200px;
+}
+
+#header {
+	height: 180px;
+	text-align: center;
+}
+
+#header h2 {
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+#main-content {
+	text-align: center;
+	align-content: center;
+
+}
+.box {
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	display: inline-block;
+}
+
+.box p {
+	margin-top: 60px;
+}
+
+.correct {
+	background-color: green;
+}
+
+form {
+	text-align: center;
+	margin-top: 20px;
+}

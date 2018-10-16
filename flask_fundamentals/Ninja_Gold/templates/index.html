@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='header'>
+			<h3><strong>Your Gold:</strong> {{gold}}</h3>
+		</div>
+
+		<div id='main-content'>
+			<div class='box'>
+				<h2>Farm</h2>
+				<p>(earns 10-20 gold)</p>
+				<form action='/updateGold' method='post'>
+					<input type='hidden' name='action' value='farm'>
+					<input type='submit' value='Find gold'>
+				</form>
+			</div>
+			<div class='box'>
+				<h2>Cave</h2>
+				<p>(earns 15 gold)</p>
+				<form action='/updateGold' method='post'>
+					<input type='hidden' name='action' value='cave'>
+					<input type='submit' value='Find gold'>
+				</form>
+			</div>
+			<div class='box'>
+				<h2>House</h2>
+				<p>(earns 2-5 gold)</p>
+				<form action='/updateGold' method='post'>
+					<input type='hidden' name='action' value='house'>
+					<input type='submit' value='Find gold'>
+				</form>
+			</div>
+			<div class='box'>
+				<h2>Casino</h2>
+				<p>(earns/takes 0-50 gold)</p>
+				<form action='/updateGold' method='post'>
+					<input type='hidden' name='action' value='casino'>
+					<input type='submit' value='Find gold'>
+				</form>
+			</div>
+		</div>
+
+		<div id='footer'>
+			<p>activities</p>
+			<div class='activities'>
+				{% for activity in activities %}
+					{% if activity[1] == 0: %}
+						<div class='activity g'>{{activity[0]}}</div>
+					{% endif %}
+					{% if activity[1] == 1: %}
+						<div class='activity r'>{{activity[0]}}</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

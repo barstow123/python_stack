@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>email validation</title>
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='header'>
+			<h1>These are our emails!</h1>
+		</div>
+
+		<div id='main-content'>
+			<table class='emails-table'>
+			  <tr>
+			    <th>email</th>
+			    <th>created at</th> 
+			  </tr>
+			  {% for email in emails %}
+			  <tr>
+			  	<td>{{email['email']}}</td>
+			  	<td>{{email['created_at']}}</td>
+			  </tr>
+			  {% endfor %}
+			</table>
+		</div>
+
+		<div id='lower-content'>
+			<h2><em>Register an email</em></h2>
+			<form class='email-form' method='post' action='/register_email'>
+				<label for='email'>Email:</label>
+				<input type='text' name='email'>
+				<input type='submit'>
+			</form>
+			{% with messages = get_flashed_messages() %}
+			  {% if messages %}
+			    {% for message in messages %}
+			      <div class='flash-message'><p>{{message}}</p></div>
+			    {% endfor %}
+			  {% endif %}
+			{% endwith %}
+		</div>
+	</div>
+
+</body>
+</html>

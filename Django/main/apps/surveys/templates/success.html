@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Survey Form</title>
+	<title>Submitted</title>
+</head>
+<body>
+	<div class='top-rectangle'>
+		<h3>Thanks for submitting this form! this form has been submitted {{times}}</h3>
+	</div>
+
+	<h2>Submitted information</h2>
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">Name:</th>
+	      <th scope="col">{{first_name}}</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>Dojo Location:</td>
+	      <td>{{location}}
+	    </tr>
+	    <tr>
+	    	<td>Favorite Language:</td>
+	    	<td>{{fav_language}}</td>
+	    </tr>
+	   	<tr>
+	   		<td>Comment:</td>
+	   		<td>{{comment}}</td>
+	   	</tr>
+	  </tbody>
+	</table>
+</body>
+</html>

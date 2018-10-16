@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C+R friends</title>
+</head>
+<body>
+
+	<div id='wrapper'>
+		<div id='header'>
+			<h1>These are my friends!</h1>
+		</div>
+
+		<div id='main-content'>
+			<table class='friends-table'>
+			  <tr>
+			    <th>Firstname</th>
+			    <th>Lastname</th> 
+			    <th>Occupation</th>
+			  </tr>
+			  {% for friend in friends %}
+			  <tr>
+			  	<td>{{friend['first_name']}}</td>
+			  	<td>{{friend['last_name']}}</td>
+			  	<td>{{friend['occupation']}}</td>
+			  </tr>
+			  {% endfor %}
+			</table>
+		</div>
+
+		<div id='lower-content'>
+			<h2><em>Add a friend</em></h2>
+			<form class='friend-form' method='post' action='/create_friend'>
+				<label for='fname'>First Name:</label>
+				<input type='text' name='fname'>
+				<label for='lname'>Last Name:</label>
+				<input type='text' name='lname'>
+				<label for='occupation'>Occupation:</label>
+				<input type='text' name='occupation'>
+				<input type='submit'>
+			</form>
+
+		</div>
+	</div>
+
+</body>
+</html>

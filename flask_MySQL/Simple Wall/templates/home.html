@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+    <div class="header">
+      <h2>CodingDojo Wall</h2>
+      <p>Welcome {{session['first_name']}}</p>
+      <a href="/logout">log off</a>
+    </div>
+    <div class="container ml-5">
+      <div class="row">
+        <div class="col-lg-4">
+          <h5>{{num_messages}} Message(s) for you ({{name}})</h5>
+          {% for message in messages %}
+            <p>{{message['first_name']}} said ({{message['sent_ago']}} ago)</p>
+            <p>&emsp;{{message['content']}}</p>
+            <form action='/delete' method='post'>
+              <button type='submit' name='delete_id' value='{{message["id"]}}'><img src='static/images/cookieMonster.jpg' style='width: 50px'></button>
+            </form>
+          {% endfor %}
+        </div>
+        <div class="col-lg-4">
+          <h5>Send a message</h5>
+          <p>You have sent a total of {{num_sent_messages[0]['COUNT(content)']}} messages so far</p>
+          {% for user in site_users %}
+          <form class="form-group form-control" action="/send" method="post">
+              <label for="{{user['first_name']}}">{{user['first_name']}}</label>
+              <input type='hidden' name='recipient_id' value='{{user["id"]}}''>
+              <input type="textarea" id="{{user['first_name']}}" name="message" value="{{user['name']}}">
+              <button type="submit" name="button">Send</button>
+          </form>
+          {% endfor %}
+
+          {% with errors = get_flashed_messages(category_filter=["message"]) %}
+            {% if errors %}
+                {% for msg in errors %}
+                        <p class="error">{{ msg }}</p>
+                {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+
+        </div>
+
+    </div>
+  </body>
+</html>

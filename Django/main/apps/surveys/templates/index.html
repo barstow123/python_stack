@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Survey Form</title>
+</head>
+<body>
+	<form class='form-group' action='/surveys/process' method='post'>
+		{% csrf_token %}
+		<div class='form-control'>
+			<label for='name'>Your Name:</label>
+			<input type='text' name='first_name' id='name'>
+		</div>
+		<div class='form-control'>
+			<label for='location'>Dojo Location: </label>
+			<input type='text' name='location' id='location'>
+		</div>
+		<div class='form-control'>
+			<label for='language'>Favorite language: </label>
+			<input type='text' id='language' name='fav_language'>
+		</div>
+		<div class='form-control'>
+			<label for='comment'>Comment (optional)</label>
+			<textarea class='form-control' id='comment'name='comment'></textarea>
+		</div>
+		<button type='submit' class='btn btn-primary'>Submit</button>
+	</form>
+
+</body>
+</html>

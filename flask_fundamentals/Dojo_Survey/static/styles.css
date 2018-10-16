@@ -7,7 +7,6 @@
 	background-color: #112276;
 	width: 1024px;
 	height: 1200px;
-	text-align: center;
 }
 
 .div-abuse {
@@ -18,4 +17,13 @@
 .btn {
 	margin-left: 20px;
 	text-align: none;
+}
+
+.flash-message {
+	background-color: red;
+	height: 20px;
+}
+
+.comment-area {
+	height: 50px;
 }

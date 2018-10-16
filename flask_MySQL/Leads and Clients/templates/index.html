@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C+R friends</title>
+	{{customers|safe}}
+	<script defer>
+		window.onload = function() {
+
+		var chart = new CanvasJS.Chart("chartContainer", {
+			theme: "light2", // "light1", "light2", "dark1", "dark2"
+			exportEnabled: true,
+			animationEnabled: true,
+			title: {
+				text: "Customer leads"
+			},
+			data: [{
+				type: "pie",
+				startAngle: 25,
+				toolTipContent: "<b>{label}</b>: {y}%",
+				showInLegend: "true",
+				legendText: "{label}",
+				indexLabelFontSize: 16,
+				indexLabel: "{label} - {y}%",
+				dataPoints: [
+					
+				]
+
+			}]
+		});
+		chart.render();
+
+		}
+	</script>
+</head>
+<body>
+
+	<div id='wrapper'>
+		<div id='header'>
+			<h1>These are the customers!</h1>
+		</div>
+
+		<div id='main-content'>
+			<table class='friends-table'>
+			  <tr>
+			    <th>Firstname</th>
+			    <th>leads</th>
+			  </tr>
+			  {% for customer in customers %}
+			  <tr>
+			  	<td>{{customer['name']}}</td>
+			  	<td>{{customer['leads']}}</td>
+			  </tr>
+			  {% endfor %}
+			</table>
+		</div>
+
+		<div id='lower-content'>
+			<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+			<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+		</div>
+	</div>
+
+</body>
+</html>
