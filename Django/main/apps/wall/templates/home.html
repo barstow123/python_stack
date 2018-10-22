@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class='container'>
+		<h1>Welcome, {{username}}!</h1>
+		<a href='{% url "wall_logout" %}'>Logout</a>
+		<form action='{% url "wall_post" %}' method='post'>
+			{% csrf_token %}
+			<label for='message'>Post a Message</label>
+			<input type='textarea' name='post' id='message'>
+			<button type='submit' class='btn btn-primary'>Post a Message</button>
+		</form>
+		{% if messages %}
+    	<ul class="messages">
+    	    {% for message in messages %}
+    	    <li class='alert alert-danger'>{{ message }}</li>
+    	    {% endfor %}
+    	</ul>
+    	{% endif %}
+    	{% if posts %}
+    	    {% for post in posts %}
+    	    <div>
+    			<h4>{{post.author.first_name}} {{post.author.last_name}} {{post.created_at}}</h4>
+    	    <p>{{ post.content }}</p>
+    	    {% if comments %}
+    	    {% for comment in comments %}
+    	    {% if comment.commented_on.id == post.id %}
+    	    <h5>{{comment.author.first_name}} {{comment.author.last_name}} says:</h5>
+    	    <p>{{comment.content}} -{{comment.created_at}}</p>
+    	    {% endif %}
+    	    {% endfor %}
+    	    {% endif %}
+    	    <form action='{% url "wall_comment" %}' method='post'>
+    	    	{% csrf_token %}
+    	    	<input type='hidden' value='{{post.id}}' name='post_id'>
+    	    	<label for='comment'>Add Comment</label>
+    	    	<input type='textarea' id='comment' name='comment'>
+    	    	<button type='submit' class='btn btn-success'>Post a Comment</button>
+    	    </form>
+    		</div>
+    	    {% endfor %}
+    	{% endif %}
+	</div>
+</body>
+</html>

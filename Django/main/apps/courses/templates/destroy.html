@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destroy {{course.name}}</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	<div class='container'>
+		<h1>Are you sure you want to delete the following course?</h1>
+		<a href='course_index'>No</a>
+		<form action="{% url 'delete_course' id=course.id %}" method='post'>
+			{% csrf_token %}
+			<button type='submit' class="btn btn-danger">Yes</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		.inline-block {
+			display: inline-block;
+		}
+	</style>
+	<title>dashboard</title>
+</head>
+<body>
+	<div class='container'>
+		<div class="row">
+	        <div class='col-7'>
+	        </div>
+	        <div class="col-3">
+	            <a href='{% url "exam_logout" %}'>Logout </a>|
+	            <a href='{% url "exam_make_job" %}'>Post A Job!</a>
+	        </div>
+	    </div>
+	    {% if messages %}
+      		<ul class="alert alert-success">
+      		    {% for message in messages %}
+      		    <li>{{ message }}</li>
+      		    {% endfor %}
+      		</ul>
+      	{% endif %}
+		<h1>{{username}}</h1>
+		<h3>Available jobs:</h3>
+		<table class="table">
+		  <thead class='thead-dark'>
+		    <tr>
+		      <th scope="col">Job</th>
+		      <th scope="col">Location</th>
+		      <th scope="col">Actions</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for job in jobs %}
+		  	{% if job.worker.id == 1 %}
+		    <tr>
+		      <td scope="row">{{job.title}}</td>
+		      <td>{{job.location}}</td>
+		      <td>
+		      	<a href="{% url 'exam_job_profile' id=job.id %}">View </a>|
+		      	{% if job.author.id == user.id %}
+		      	<a href="{% url 'exam_delete_job' id=job.id %}">Remove </a>|
+		      	<a href="{% url 'exam_edit_job' id=job.id %}">Edit </a>|
+		      	{% endif %}
+		      	<form class='inline-block' action='{% url "exam_add_job" id=job.id %}' method='post'>
+		      		{% csrf_token %}
+		      		<button type='submit' class='btn btn-primary btn-sm'>Add!</button>
+		      	</form>
+		    </tr>
+		    {% endif %}
+		    {% endfor %}
+		  </tbody>
+		</table>
+
+		<h3>My Jobs</h3>
+		<table class="table">
+		  <thead class='thead-dark'>
+		    <tr>
+		      <th scope="col">Job</th>
+		      <th scope="col">Location</th>
+		      <th scope="col">Actions</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for job in jobs %}
+		  	{% if job.worker == user %}
+		    <tr>
+		      <td scope="row">{{job.title}}</td>
+		      <td>{{job.location}}</td>
+		      <td>
+		      	<a href="{% url 'exam_job_profile' id=job.id %}">View </a>|
+		      	<a href="{% url 'exam_delete_job' id=job.id %}">Done </a>|
+		      	<form class='inline-block' action="{% url 'exam_drop_job' id=job.id %}" method='post'>
+		      		{% csrf_token %}
+		      		<button type='submit' class='btn btn-warning btn-sm'>Drop </button>
+		      	</form>
+		    </tr>
+		    {% endif %}
+		    {% endfor %}
+		  </tbody>
+		</table>
+	</div>
+</body>
+</html>

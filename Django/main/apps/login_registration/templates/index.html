@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login and Registration</h1>
+
+      <div class="row">
+      <!-- <h1>Login and Registration</h1> -->
+
+      <div class="col-lg-4">
+        <h1>Register here!</h1>
+        <div class="form-group">
+        
+          <form action="{% url 'login_register' %}" method="post">
+          	{% csrf_token %}
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" class="form-control" value='Andrew'>
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" class="form-control"	value='Baconstrip'>           
+            <label for="email">Email:</label>
+            <input type="text" name="email" class="form-control"	value='bubbly@gmail.com'>            
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="form-control"	value='PAssword88$'>            
+            <label for="password_confirm">Confirm Password:</label>
+            <input type="password" name="password_confirm" class="form-control"	value='PAssword88$'>
+            <button type="submit" name="login" class="btn btn-success mt-2">Register!</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-2">
+
+      </div>
+      <div class="col-lg-4">
+        <h1>Login!</h1>
+        
+        <div class="form-group px-10">
+          <form action="{% url 'login_login' %}" method="post">
+          	{% csrf_token %}
+            <label for="email">Email:</label>
+            <input type="text" name="email" class="form-control">
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="form-control" value='PAssword88$'>
+            <button type="submit" name="login" class="btn btn-success mt-2">Login!</button>
+          </form>
+          {% if messages %}
+			<ul class="messages">
+			    {% for message in messages %}
+			    <li>{{ message }}</li>
+			    {% endfor %}
+			</ul>
+		{% endif %}
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </body>
+</html>

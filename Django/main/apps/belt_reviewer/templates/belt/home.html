@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .book-link {
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+	<div class='container'>
+        <div class="row">
+            <div class='col-7'>
+            </div>
+            <div class="col-3">
+                <a href='{% url "belt_logout" %}'>Logout </a>|
+                <a href='{% url "belt_review" %}'>Post A Review</a>
+            </div>
+        </div>
+		<h1>Welcome, {{username}}!</h1>
+	</div>
+    <div class="container">
+  <div class="row">
+    <div class="col">
+        <h3>Recent Book Reviews: </h3>
+        {% for review in reviews %}
+            <h5><a href="{% url 'belt_book' book_id=review.book_reviewed.id %}">{{review.book_reviewed.title}}</a></h5>
+            <p>Rating: {{review.rating}}</p>
+            <p><a href='{% url "belt_profile" id=review.review_author.id %}'>{{review.review_author.first_name}} {{review.review_author.last_name}}</a> says: <em>{{review.content}}</em></p>
+            {% if review.review_author.id == user.id %}
+                <form action="{% url 'belt_delete' review_id=review.id %}" method='post'>
+                    {% csrf_token %}
+                    <input type='hidden' name='return_index' value='http://localhost:8000/belt_reviewer/home'>
+                    <div class='form-group'>
+                        <button type="submit" class="btn btn-link">Delete</button>
+                    </div>  
+                </form>
+                {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col">
+        <h3>Books with Reviews: </h3>
+        {% if books %}
+        {% for book in books %}
+            <p class = 'book-link'><a href="{% url 'belt_book' book_id=book.id %}"><strong>{{book.title}}</strong></a></p>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="w-100"></div>
+  </div>
+</div>
+</body>
+</html>

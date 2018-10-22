@@ -2,6 +2,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
+	url(r'belt_exam/', include('apps.belt_exam.urls')),
+	url(r'belt_reviewer/', include('apps.belt_reviewer.urls')),
+	url(r'wall/', include('apps.wall.urls')),
+	url(r'^login_registration/', include('apps.login_registration.urls')),
+	url(r'^courses/', include('apps.courses.urls')),
 	url(r'^semi_restful_users/', include('apps.Semi_Restful_Users.urls')),
 	url(r'^ninja_gold/', include('apps.ninja_gold.urls')),
 	url(r'^session_words/', include('apps.session_words.urls')),

@@ -31,6 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.belt_exam',
+    'apps.belt_reviewer',
+    'apps.wall',
+    'apps.login_registration',
+    'apps.courses',
     'apps.Semi_Restful_Users',
     'apps.likes_books',
     'apps.book_authors',
@@ -117,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 

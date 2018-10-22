@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+	<title>Book {{book.title}}</title>
+</head>
+<body>
+	<div class='container'>
+		<div class="row">
+			<div class='col-8'>
+			</div>
+		  	<div class="col-2">
+		  		{% if logged_in %}
+		  		<a href='{% url "belt_logout" %}'>Logout </a>|
+		  		<a href="{% url 'belt_home' %}">Home</a>
+		  		{% endif %}
+		  		{% if not logged_in %}
+		  		<a href="{% url 'belt_index' %}">Login</a>
+		  		{% endif %}
+		  	</div>
+		</div>
+		<h1>{{book.title}}</h1>
+		<h4> Author: {{book.author.name}}</h4>
+		<div class="row">
+			<div class='col-1'>
+			</div>
+		  	<div class="col-6">
+		  		<h3>Reviews:</h3>
+		  		{% for review in book_reviews %}
+		  		<p><a href="{% url 'belt_profile' id=review.review_author.id %}">{{review.review_author.first_name}} {{review.review_author.last_name}}</a> says: <em>{{review.content}}</em></p>
+		  		<p class='small'>Rating: {{review.rating}}</p>
+		  		<p class='small'>Posted On {{review.created_at}}</p>
+		  		{% if review.review_author.id == user.id %}
+		  		<form action="{% url 'belt_delete' review_id=review.id %}" method='post'>
+		  			{% csrf_token %}
+		  			<input type='hidden' name='return_index' value='http://localhost:8000/belt_reviewer/book/{{book.id}}'>
+		  			<div class='form-group'>
+		  				<button type="submit" class="btn btn-link">Delete</button>
+		  			</div>	
+		  		</form>
+		  		{% endif %}
+		  		{% endfor %}
+		 	</div>
+		  	<div class="col-4">
+		  		{% if logged_in %}
+			  	<h4>Add a Review</h4>
+			  	<form action='{% url "belt_post_review" %}' method='post'>
+			  		{% csrf_token %}
+			  		<input type='hidden' name='choose_author' value='{{book.author.name}}'>
+			  		<input type='hidden' name='title' value='{{book.title}}'>
+			  		<input type='hidden' name='make_author' value=''>
+			  		<div class='form-group-row'>
+						<label for='content'>Review: </label>
+						<textarea class='form-control' id='content' name='content' rows='4'></textarea>
+					</div>
+					<div class='form-group-row'>
+						<label for='rating'>Rating: </label>
+						<select class='custom-select mr-sm-2' id='rating' name='rating'>
+							<option value='1'>1</option>
+							<option value='2'>2</option>
+							<option value='3'>3</option>
+							<option value='4'>4</option>
+							<option value='5'>5</option>
+						</select>
+					</div>
+					<button type='submit' value='submit'>Submit Review!</button>
+				</form>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

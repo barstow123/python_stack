@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>job profile</title>
+</head>
+<body>
+	<div class='container'>
+		<div class="row">
+	        <div class='col-7'>
+	        </div>
+	        <div class="col-3">
+	            <a href='{% url "exam_logout" %}'>Logout </a>|
+	            <a href='{% url "exam_dashboard" %}'>Dashboard</a>
+	        </div>
+	    </div>
+		<h1>Stats for: <em>{{job.title}}</em></h1>
+		<h5>{{job.description}}</h5>
+		<h5><strong>Location: </strong>{{job.location}}</h5>
+		<h5><strong>Posted By: </strong>{{job.author.first_name}} {{job.author.last_name}}</h5>
+		<h6><strong>Categories: </strong><em>{{job.category}}</em></h6>
+		<h7>Posted on {{job.created_at}}</h7>
+
+		{% if job.worker.id != user.id %}
+		<form action="{% url 'exam_add_job' id=job.id %}" method='post'>
+			{% csrf_token %}
+			<button type='submit' class='btn btn-link'>Add Job!</button>
+		</form>
+		{% endif %}
+		{% if job.worker.id == user.id %}
+		<form action="{% url 'exam_drop_job' id=job.id %}" method='post'>
+			{% csrf_token %}
+			<button type='submit' class='btn btn-warning'>Drop Job</button>
+		</form>
+		{% endif %}
+	</div>
+</body>
+</html>
