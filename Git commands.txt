@@ -1,6 +1,6 @@
 git init
 git add .
 git status
-git commit
-git remove -v
+git commit -m 'add message here'
+git remote -v
 git push
